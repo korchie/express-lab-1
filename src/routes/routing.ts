@@ -19,9 +19,9 @@ route.get("/cart-items", (req, res) => {
         filteredCart = filteredCart.slice(0, Number(pageSize));
     }
 
-    // if (prefix) {
-    //     filteredCart = filteredCart.filter(item => item.product.startsWith(prefix));
-    // }
+    if (prefix) {
+         filteredCart = filteredCart.filter(item => item.product.startsWith(prefix as string));
+    }
 
     res.status(200);
     res.json(filteredCart);
